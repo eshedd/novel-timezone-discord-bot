@@ -1,7 +1,7 @@
 import discord
 import random
+import config
 from discord.ext import commands
-
 from utils import get_random_wikipedia_page, save_messages
 import matplotlib.pyplot as plt
 import matplotlib
@@ -15,7 +15,6 @@ import pydot
 
 matplotlib.use('Agg')
 
-api_key = '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'
 
 # List of GIF URLs
 gif_urls = [
@@ -220,17 +219,4 @@ async def call(ctx):
     return
 
 # Run the bot with your bot token
-bot.run('MTE1NDI5ODg2ODk3MjkyOTA3NQ.G-U-oa.Oll4TdQZPBOXSUdz-mxxjMdqil-08nM7kYEhiA')
-
-
-# bot = interactions.Client(token="MTE1NDI5ODg2ODk3MjkyOTA3NQ.G-U-oa.Oll4TdQZPBOXSUdz-mxxjMdqil-08nM7kYEhiA")
-# # bot = interactions.Client(token=api_key)
-
-# @bot.command(
-#     name="egg",
-#     description="This is the first command I made!",
-# )
-# async def egg(ctx: interactions.CommandContext):
-#     await ctx.send("Hi there!")
-
-# bot.start()
+bot.run(config.api_key)
